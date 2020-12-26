@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Writing | Henry&#39;s Blogger</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="你可以使用以下指令來創建或發佈一個頁面： 1$ hexo new [layout] &lt;title&gt; post 在是預設的佈局（layout），但是你可以提供自己的。透過編輯檔案 _config.yml 裡的 default_layout，你可以改變預設佈局。 佈局在 Hexo 裡有三種預設佈局：post、page以及draft。透過其中任一種方式創建一個檔案將會儲存在不同路徑。新創建的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Writing">
+<meta property="og:url" content="http://example.com/2020/12/26/hexo-basic-writing/index.html">
+<meta property="og:site_name" content="Henry&#39;s Blogger">
+<meta property="og:description" content="你可以使用以下指令來創建或發佈一個頁面： 1$ hexo new [layout] &lt;title&gt; post 在是預設的佈局（layout），但是你可以提供自己的。透過編輯檔案 _config.yml 裡的 default_layout，你可以改變預設佈局。 佈局在 Hexo 裡有三種預設佈局：post、page以及draft。透過其中任一種方式創建一個檔案將會儲存在不同路徑。新創建的">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-12-26T10:24:45.000Z">
+<meta property="article:modified_time" content="2020-12-26T10:24:45.000Z">
+<meta property="article:author" content="Henry Wu">
+<meta property="article:tag" content="blog-tools">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Henry&#39;s Blogger" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Henry&#39;s Blogger</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-hexo-basic-writing" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/12/26/hexo-basic-writing/" class="article-date">
+  <time datetime="2020-12-26T10:24:45.000Z" itemprop="datePublished">2020-12-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/">翻譯</a>►<a class="article-category-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/Hexo/">Hexo</a>►<a class="article-category-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/Hexo/Basic-Usage/">Basic Usage</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Writing
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>你可以使用以下指令來創建或發佈一個頁面：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+<p><code>post</code> 在是預設的佈局（layout），但是你可以提供自己的。透過編輯檔案 <code>_config.yml</code> 裡的 <code>default_layout</code>，你可以改變預設佈局。</p>
+<h3 id="佈局"><a href="#佈局" class="headerlink" title="佈局"></a>佈局</h3><p>在 Hexo 裡有三種預設佈局：<code>post</code>、<code>page</code>以及<code>draft</code>。透過其中任一種方式創建一個檔案將會儲存在不同路徑。新創建的發佈會被存入 <code>source/_posts</code> 這個資料夾。</p>
+<p>禁用佈局，參考<a target="_blank" rel="noopener" href="https://hexo.io/docs/front-matter#Layout">這篇</a></p>
+<h3 id="檔名"><a href="#檔名" class="headerlink" title="檔名"></a>檔名</h3><p>Hexo 預設會用發佈的標題作為檔名。你可以在 <code>_config.yml</code> 去修改 <code>new_post_name</code> 的設定，去更換預設檔名，例如：<code>:year-:month-:day-:title.md</code> 將會在檔名前加上發佈創建日期作為前綴。你也可以使用以下佔位符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">:title </span><br><span class="line">:year</span><br><span class="line">:month</span><br><span class="line">:i_month 個位數，不會補 0</span><br><span class="line">:day</span><br><span class="line">:i_day 個位數，不會補 0</span><br></pre></td></tr></table></figure>
+
+<h2 id="草稿"><a href="#草稿" class="headerlink" title="草稿"></a>草稿</h2><p>在這之前我們提到過一個在 Hexo 裡一個特別的佈局：草稿。所有在這個佈局裡的發佈都會被存入 <code>source/_drafts</code> 這個資料夾。你可以透過 <code>publish</code> 指令去移動草稿到 <code>source/_posts</code> 這個資料夾。它跟 <code>new</code> 指令有相似的作用。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo publish [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<p>草稿預設不會顯示。你可以在執行 hexo 命令時加上 <code>--draft</code> 的設定，或是啟用在 <code>_config.yml</code> 的 <code>render_drafts</code> 設定去渲染草稿 </p>
+<h2 id="腳手架"><a href="#腳手架" class="headerlink" title="腳手架"></a>腳手架</h2><p>當你要創建發佈時，Hexo 將會基於在 <code>scaffolds</code> 檔案夾裡相關的檔案去建立檔案。舉例來說：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new photo <span class="string">&quot;My Gallery&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>當你下這個指令，Hexo 會試著在 <code>scaffolds</code> 資料夾找出 <code>photo.md</code> 且基於它來建立發佈。以下佔位符是可以使用的腳手架。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">layout </span><br><span class="line">title</span><br><span class="line">date</span><br></pre></td></tr></table></figure>
+
+<h2 id="支援的各式"><a href="#支援的各式" class="headerlink" title="支援的各式"></a>支援的各式</h2><p>Hexo 支援任何格式撰寫文章，只要相關的渲染套件有被安裝。</p>
+<p>舉裡來說，Hexo 預設有 <code>hexo-renderer-marked</code> 及 <code>hexo-renderer-ejs</code>。所以你可以透過 <code>markdown</code> 或是 <code>ejs</code> 語法來撰寫你的文章。假如你安裝了 <code>hexo-renderer-pug</code>，你將能夠透過 <code>pug</code> 模板語法來撰寫你的文章。</p>
+<p>你可以重新命名你的文章且轉換檔名至 <code>.ejs</code>，然後 Hexo 會使用 <code>hexo-renderer-ejs</code> 來渲染那個檔案，其他格式同樣也行。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/12/26/hexo-basic-writing/" data-id="ckj5kcihc000htmum3hlscqkv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/blog-tools/" rel="tag">blog-tools</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2020/12/26/hexo-basic-datafiles/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Data Files
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2020/12/26/tools-buildyourownbundler/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Record of &#34;Build Your Own Bundler&#34;</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/">翻譯</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/Hexo/">Hexo</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/Hexo/Basic-Usage/">Basic Usage</a></li></ul></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/blog-tools/" rel="tag">blog-tools</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/blog-tools/" style="font-size: 10px;">blog-tools</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2020/12/26/hexo-basic-assetfolders/">Asset Folders</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/12/26/hexo-basic-datafiles/">Data Files</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/12/26/hexo-basic-writing/">Writing</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/12/26/tools-buildyourownbundler/">Record of &#34;Build Your Own Bundler&#34;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Henry Wu<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+
+  
+<script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

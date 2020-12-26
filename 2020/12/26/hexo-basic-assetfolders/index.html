@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Asset Folders | Henry&#39;s Blogger</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="全域的資產資料夾在 source 資料夾內，不屬於發佈文章類型的檔案稱為 Assets。假如你只是要放幾張照片在一個 Hexo 專案裡，那麼最簡單的方式就是將它們放入 source&#x2F;images 資料夾。然後，你可以透過 ![](&#x2F;images&#x2F;image.jpg) 像是這樣的方式存取到它們。 發佈資產資料夾針對那些預期會經常提供照片或其他資料，或是偏好將他們的資產以「一篇發文對應一個資料夾」的形">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Asset Folders">
+<meta property="og:url" content="http://example.com/2020/12/26/hexo-basic-assetfolders/index.html">
+<meta property="og:site_name" content="Henry&#39;s Blogger">
+<meta property="og:description" content="全域的資產資料夾在 source 資料夾內，不屬於發佈文章類型的檔案稱為 Assets。假如你只是要放幾張照片在一個 Hexo 專案裡，那麼最簡單的方式就是將它們放入 source&#x2F;images 資料夾。然後，你可以透過 ![](&#x2F;images&#x2F;image.jpg) 像是這樣的方式存取到它們。 發佈資產資料夾針對那些預期會經常提供照片或其他資料，或是偏好將他們的資產以「一篇發文對應一個資料夾」的形">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-12-26T10:24:45.000Z">
+<meta property="article:modified_time" content="2020-12-26T10:24:45.000Z">
+<meta property="article:author" content="Henry Wu">
+<meta property="article:tag" content="blog-tools">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Henry&#39;s Blogger" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Henry&#39;s Blogger</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-hexo-basic-assetfolders" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/12/26/hexo-basic-assetfolders/" class="article-date">
+  <time datetime="2020-12-26T10:24:45.000Z" itemprop="datePublished">2020-12-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/">翻譯</a>►<a class="article-category-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/Hexo/">Hexo</a>►<a class="article-category-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/Hexo/Basic-Usage/">Basic Usage</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Asset Folders
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="全域的資產資料夾"><a href="#全域的資產資料夾" class="headerlink" title="全域的資產資料夾"></a>全域的資產資料夾</h2><p>在 <code>source</code> 資料夾內，不屬於發佈文章類型的檔案稱為 Assets。假如你只是要放幾張照片在一個 Hexo 專案裡，那麼最簡單的方式就是將它們放入 <code>source/images</code> 資料夾。然後，你可以透過 <code>![](/images/image.jpg)</code> 像是這樣的方式存取到它們。</p>
+<h2 id="發佈資產資料夾"><a href="#發佈資產資料夾" class="headerlink" title="發佈資產資料夾"></a>發佈資產資料夾</h2><p>針對那些預期會經常提供照片或其他資料，或是偏好將他們的資產以「一篇發文對應一個資料夾」的形式存放的使用者們，Hexo 也提供一個更有組織的方式來管理這些資產。這涉及到更多，但資產處理可透過將 <code>_config.yml</code> 裡 <code>post_asset_folder</code> 的設定為 <code>true</code> 被非常輕易地啟動。</p>
+<p>隨著啟用資產資料夾管理，Hexo 將會在每次你透過 <code>hexo new [layout] &lt;title&gt;</code> 指令創建新發文時，建立一個資料夾。這個資料夾名稱將會基於這個發文所產生與發文的 markdown 檔案一樣的名稱。將所有相關於這篇發文的資產放進去相對應的資料夾，且你能夠透過相對路徑的方式去引用它們，創建一個更加容易且便利的工作流。</p>
+<h2 id="針對相對路徑飲用的標記套件"><a href="#針對相對路徑飲用的標記套件" class="headerlink" title="針對相對路徑飲用的標記套件"></a>針對相對路徑飲用的標記套件</h2><p>透過一般的 markdown 語法及相對路徑來引用相片或是其他資產可能導致無法正確顯示在 archives 或是 index 頁面。在 Hexo 2，在社群裡有套件被發明用來解決這個問題。然而，僅有少數新的標記套件被添加到 Hexo 3 的發佈。以下在發文中引用你的資產的方式將會更簡單：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset<span class="emphasis">_path slug %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% asset_</span>img slug [title] %&#125;</span><br><span class="line">&#123;% asset<span class="emphasis">_link slug [title] %&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>舉例來說，在啟用資產資料夾的情況下，你放了一張叫做 <code>example.jpg</code> 的相片進入資產資料夾。假如你透過 <code>![](example.jpg)</code> 的 markdown 語法，使用相對路徑來引用它，這將不會在 index 頁面顯示。（然而用在發文本身是預期可以成功的）。</p>
+<p>因此針對引用相片更為正確的用法將會是透過標記套件語法，而非 markdown。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset<span class="emphasis">_img example.jpg This is an example image %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% asset_</span>img &quot;spaced asset.jpg&quot; &quot;spaced title&quot; %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這個方法將能同時顯示照片於 index 及 archive 頁面。</p>
+<h2 id="透過-markdown-嵌入相片"><a href="#透過-markdown-嵌入相片" class="headerlink" title="透過 markdown 嵌入相片"></a>透過 markdown 嵌入相片</h2><p>hexo-renderer-marked 3.1.0 介紹了一個不需使用 <code>asset_img</code> 標記套件的新設置。</p>
+<p>啟用：</p>
+<figure class="highlight markdown"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">post<span class="emphasis">_asset_</span>folder: true</span><br><span class="line">marked:</span><br><span class="line">  prependRoot: true</span><br><span class="line">  postAsset: true</span><br></pre></td></tr></table></figure>
+<p>一旦啟用，一張資產相片將會自動被解析到相對應的發文路徑。舉例來說：“image.jpg” 位於 “/2020/01/02/foo/image.jpg”, 意味著它是一個位在 “/2020/01/02/foo/“ 路徑發文的資產相片，<code>![](image.jpg)</code> 會被渲染為 <code>&lt;img src=&quot;/2020/01/02/foo/image.jpg&quot;&gt;</code>。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/12/26/hexo-basic-assetfolders/" data-id="ckj5kciha000btmum1juc9sp8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/blog-tools/" rel="tag">blog-tools</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2020/12/26/hexo-basic-datafiles/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Data Files</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/">翻譯</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/Hexo/">Hexo</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/Hexo/Basic-Usage/">Basic Usage</a></li></ul></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/blog-tools/" rel="tag">blog-tools</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/blog-tools/" style="font-size: 10px;">blog-tools</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2020/12/26/hexo-basic-assetfolders/">Asset Folders</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/12/26/hexo-basic-datafiles/">Data Files</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/12/26/hexo-basic-writing/">Writing</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/12/26/tools-buildyourownbundler/">Record of &#34;Build Your Own Bundler&#34;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Henry Wu<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+
+  
+<script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
