@@ -25,7 +25,7 @@ categories:
   }
 }
 ```
-3. 將你的 Hexo 資料夾以 source 分支推至你的遠端倉庫， `public/` 資料夾預設不會（且不應該）被上傳，確定 `.gitignore` 檔案內有包含 `public/` 這行。該資料夾結構應該約略相似於[這個]()專案，不包含 `.gitmodules` 這個檔案。
+3. 將你的 Hexo 資料夾以 source 分支推至你的遠端倉庫， `public/` 資料夾預設不會（且不應該）被上傳，確定 `.gitignore` 檔案內有包含 `public/` 這行。該資料夾結構應該約略相似於[這個](https://github.com/hexojs/hexo-starter)專案，不包含 `.gitmodules` 這個檔案。
 
 - 將你的 source 推到 GitHub 上：
 
