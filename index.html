@@ -64,6 +64,63 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-tree" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/12/26/tree/" class="article-date">
+  <time datetime="2020-12-26T11:58:32.768Z" itemprop="datePublished">2020-12-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/tools/">tools</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020/12/26/tree/">tree 命令列 - 印出專案資料夾結構</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install tree</span><br></pre></td></tr></table></figure>
+
+<h2 id="設定-flag"><a href="#設定-flag" class="headerlink" title="設定 flag"></a>設定 flag</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-L 指定 print 出來的層數</span><br><span class="line">-J print 出來的格式為 json</span><br><span class="line">-I &lt;folder&gt; 忽略某個資料夾</span><br><span class="line">... 當然不只這兩種</span><br></pre></td></tr></table></figure>
+
+<p><code>tree -L 1</code> 表示印出當前資料夾第一層結構：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">├── Applications</span><br><span class="line">├── Creative\ Cloud\ Files</span><br><span class="line">├── Desktop</span><br><span class="line">├── Documents</span><br><span class="line">├── Downloads</span><br><span class="line">├── Library</span><br><span class="line">├── Movies</span><br><span class="line">├── Music</span><br><span class="line">├── Pictures</span><br><span class="line">├── Postman</span><br><span class="line">├── Public</span><br><span class="line">├── fonts</span><br><span class="line">└── iCloud�\233��\237�\210�\201�\230�\224�\211</span><br></pre></td></tr></table></figure>
+
+<p><code>tree -L 1 -J</code> 加上 -J 表示以 json 呈現：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">[&#123;<span class="attr">&quot;type&quot;</span>:<span class="string">&quot;directory&quot;</span>,<span class="attr">&quot;name&quot;</span>: <span class="string">&quot;.&quot;</span>,<span class="attr">&quot;contents&quot;</span>:[</span><br><span class="line">    &#123;<span class="attr">&quot;type&quot;</span>:<span class="string">&quot;directory&quot;</span>,<span class="attr">&quot;name&quot;</span>:<span class="string">&quot;Applications&quot;</span>,<span class="attr">&quot;contents&quot;</span>:[</span><br><span class="line">    ]&#125;,</span><br><span class="line">    &#123;<span class="attr">&quot;type&quot;</span>:<span class="string">&quot;directory&quot;</span>,<span class="attr">&quot;name&quot;</span>:<span class="string">&quot;Creative Cloud Files&quot;</span>,<span class="attr">&quot;contents&quot;</span>:[</span><br><span class="line">    ]&#125;,</span><br><span class="line">    &#123;<span class="attr">&quot;type&quot;</span>:<span class="string">&quot;directory&quot;</span>,<span class="attr">&quot;name&quot;</span>:<span class="string">&quot;Desktop&quot;</span>,<span class="attr">&quot;contents&quot;</span>:[</span><br><span class="line">    ]&#125;,</span><br><span class="line">    &#123;<span class="attr">&quot;type&quot;</span>:<span class="string">&quot;directory&quot;</span>,<span class="attr">&quot;name&quot;</span>:<span class="string">&quot;Documents&quot;</span>,<span class="attr">&quot;contents&quot;</span>:[</span><br><span class="line">    ]&#125;,</span><br><span class="line">    &#123;<span class="attr">&quot;type&quot;</span>:<span class="string">&quot;directory&quot;</span>,<span class="attr">&quot;name&quot;</span>:<span class="string">&quot;Downloads&quot;</span>,<span class="attr">&quot;contents&quot;</span>:[</span><br><span class="line">    ]&#125;,</span><br><span class="line">    &#123;<span class="attr">&quot;type&quot;</span>:<span class="string">&quot;directory&quot;</span>,<span class="attr">&quot;name&quot;</span>:<span class="string">&quot;Library&quot;</span>,<span class="attr">&quot;contents&quot;</span>:[</span><br><span class="line">    ]&#125;,</span><br><span class="line">    &#123;<span class="attr">&quot;type&quot;</span>:<span class="string">&quot;directory&quot;</span>,<span class="attr">&quot;name&quot;</span>:<span class="string">&quot;Movies&quot;</span>,<span class="attr">&quot;contents&quot;</span>:[</span><br><span class="line">    ]&#125;,</span><br><span class="line">    &#123;<span class="attr">&quot;type&quot;</span>:<span class="string">&quot;directory&quot;</span>,<span class="attr">&quot;name&quot;</span>:<span class="string">&quot;Music&quot;</span>,<span class="attr">&quot;contents&quot;</span>:[</span><br><span class="line">    ]&#125;,</span><br><span class="line">    &#123;<span class="attr">&quot;type&quot;</span>:<span class="string">&quot;directory&quot;</span>,<span class="attr">&quot;name&quot;</span>:<span class="string">&quot;Pictures&quot;</span>,<span class="attr">&quot;contents&quot;</span>:[</span><br><span class="line">    ]&#125;,</span><br><span class="line">    &#123;<span class="attr">&quot;type&quot;</span>:<span class="string">&quot;directory&quot;</span>,<span class="attr">&quot;name&quot;</span>:<span class="string">&quot;Postman&quot;</span>,<span class="attr">&quot;contents&quot;</span>:[</span><br><span class="line">    ]&#125;,</span><br><span class="line">    &#123;<span class="attr">&quot;type&quot;</span>:<span class="string">&quot;directory&quot;</span>,<span class="attr">&quot;name&quot;</span>:<span class="string">&quot;Public&quot;</span>,<span class="attr">&quot;contents&quot;</span>:[</span><br><span class="line">    ]&#125;,</span><br><span class="line">    &#123;<span class="attr">&quot;type&quot;</span>:<span class="string">&quot;directory&quot;</span>,<span class="attr">&quot;name&quot;</span>:<span class="string">&quot;fonts&quot;</span>,<span class="attr">&quot;contents&quot;</span>:[</span><br><span class="line">    ]&#125;,</span><br><span class="line">    &#123;<span class="attr">&quot;type&quot;</span>:<span class="string">&quot;directory&quot;</span>,<span class="attr">&quot;name&quot;</span>:<span class="string">&quot;iCloud雲碟（封存檔）&quot;</span>,<span class="attr">&quot;contents&quot;</span>:[</span><br><span class="line">    ]&#125;</span><br><span class="line">  ]&#125;,</span><br><span class="line">  &#123;<span class="attr">&quot;type&quot;</span>:<span class="string">&quot;report&quot;</span>,<span class="attr">&quot;directories&quot;</span>:<span class="number">13</span>,<span class="attr">&quot;files&quot;</span>:<span class="number">0</span>&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>輸入：<code>tree --help</code> 可以看到各種設定</p>
+<p>假設今天要忽略某個資料夾 node_moduls：</p>
+<p><code>tree -I node_modules</code>，印出：     </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">├── dist</span><br><span class="line">│   ├── main.js</span><br><span class="line">│   └── main.js.LICENSE.txt</span><br><span class="line">├── index.html</span><br><span class="line">├── package-lock.json</span><br><span class="line">├── package.json</span><br><span class="line">└── src</span><br><span class="line">    └── index.js</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/12/26/tree/" data-id="ckj5rkeqj000m0dumdna846iw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/tools/" rel="tag">tools</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-source-map-explorer " class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2020/12/26/source-map-explorer%20/" class="article-date">
@@ -102,10 +159,11 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">source-map-explorer foo.min.js --html</span><br><span class="line">source-map-explorer foo.min.js --json</span><br><span class="line">source-map-explorer foo.min.js --tsv</span><br></pre></td></tr></table></figure>
 
 
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/26/source-map-explorer%20/" data-id="ckj5lz5gz000055ume0w72sxf" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/12/26/source-map-explorer%20/" data-id="ckj5rkeqk000o0dum5p1pap4m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/tools/" rel="tag">tools</a></li></ul>
@@ -162,169 +220,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/26/hexo-basic-assetfolders/" data-id="ckj5kciha000btmum1juc9sp8" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/12/26/hexo-basic-assetfolders/" data-id="ckj5rkeqd000b0dum30h3av1t" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/blog-tools/" rel="tag">blog-tools</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hexo-basic-datafiles" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2020/12/26/hexo-basic-datafiles/" class="article-date">
-  <time datetime="2020-12-26T10:24:45.000Z" itemprop="datePublished">2020-12-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/">翻譯</a>►<a class="article-category-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/Hexo/">Hexo</a>►<a class="article-category-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/Hexo/Basic-Usage/">Basic Usage</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2020/12/26/hexo-basic-datafiles/">Data Files</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>有時你可能需要在模板內使用某些沒有辦法直接在你的發文內取得的資料，或者你想要在其它地方複用。在那樣的情況下，Hexo 3 介紹了一種新的資料資料夾。這個功能在 <code>source/_data</code> 資料夾讀取 YAML 或 JSON 檔案，這樣你可以在你的網站裡使用它們。</p>
-<p>舉裡來說，在 <code>source/_data</code> 下新增一個 <code>menu.yml</code> 檔案。</p>
-<figure class="highlight yml"><figcaption><span>menu.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Home:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">Gallery:</span> <span class="string">/gallery/</span></span><br><span class="line"><span class="attr">Archives:</span> <span class="string">/archives/</span></span><br></pre></td></tr></table></figure>
-
-<p>然後你可以在模板使用它們</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;% for (var link in site.data.menu) &#123; %&gt;</span><br><span class="line">  &lt;a href&#x3D;&quot;&lt;%&#x3D; site.data.menu[link] %&gt;&quot;&gt; &lt;%&#x3D; link %&gt; &lt;&#x2F;a&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
-
-<p>渲然成這樣：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;/&quot;</span>&gt;</span> Home <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;/gallery/&quot;</span>&gt;</span> Gallery <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;/archives/&quot;</span>&gt;</span> Archives <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/26/hexo-basic-datafiles/" data-id="ckj5kcihb000ftmum8ewl8stz" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/blog-tools/" rel="tag">blog-tools</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hexo-basic-writing" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2020/12/26/hexo-basic-writing/" class="article-date">
-  <time datetime="2020-12-26T10:24:45.000Z" itemprop="datePublished">2020-12-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/">翻譯</a>►<a class="article-category-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/Hexo/">Hexo</a>►<a class="article-category-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/Hexo/Basic-Usage/">Basic Usage</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2020/12/26/hexo-basic-writing/">Writing</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>你可以使用以下指令來創建或發佈一個頁面：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
-<p><code>post</code> 在是預設的佈局（layout），但是你可以提供自己的。透過編輯檔案 <code>_config.yml</code> 裡的 <code>default_layout</code>，你可以改變預設佈局。</p>
-<h3 id="佈局"><a href="#佈局" class="headerlink" title="佈局"></a>佈局</h3><p>在 Hexo 裡有三種預設佈局：<code>post</code>、<code>page</code>以及<code>draft</code>。透過其中任一種方式創建一個檔案將會儲存在不同路徑。新創建的發佈會被存入 <code>source/_posts</code> 這個資料夾。</p>
-<p>禁用佈局，參考<a target="_blank" rel="noopener" href="https://hexo.io/docs/front-matter#Layout">這篇</a></p>
-<h3 id="檔名"><a href="#檔名" class="headerlink" title="檔名"></a>檔名</h3><p>Hexo 預設會用發佈的標題作為檔名。你可以在 <code>_config.yml</code> 去修改 <code>new_post_name</code> 的設定，去更換預設檔名，例如：<code>:year-:month-:day-:title.md</code> 將會在檔名前加上發佈創建日期作為前綴。你也可以使用以下佔位符</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">:title </span><br><span class="line">:year</span><br><span class="line">:month</span><br><span class="line">:i_month 個位數，不會補 0</span><br><span class="line">:day</span><br><span class="line">:i_day 個位數，不會補 0</span><br></pre></td></tr></table></figure>
-
-<h2 id="草稿"><a href="#草稿" class="headerlink" title="草稿"></a>草稿</h2><p>在這之前我們提到過一個在 Hexo 裡一個特別的佈局：草稿。所有在這個佈局裡的發佈都會被存入 <code>source/_drafts</code> 這個資料夾。你可以透過 <code>publish</code> 指令去移動草稿到 <code>source/_posts</code> 這個資料夾。它跟 <code>new</code> 指令有相似的作用。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo publish [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
-
-<p>草稿預設不會顯示。你可以在執行 hexo 命令時加上 <code>--draft</code> 的設定，或是啟用在 <code>_config.yml</code> 的 <code>render_drafts</code> 設定去渲染草稿 </p>
-<h2 id="腳手架"><a href="#腳手架" class="headerlink" title="腳手架"></a>腳手架</h2><p>當你要創建發佈時，Hexo 將會基於在 <code>scaffolds</code> 檔案夾裡相關的檔案去建立檔案。舉例來說：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new photo <span class="string">&quot;My Gallery&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>當你下這個指令，Hexo 會試著在 <code>scaffolds</code> 資料夾找出 <code>photo.md</code> 且基於它來建立發佈。以下佔位符是可以使用的腳手架。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">layout </span><br><span class="line">title</span><br><span class="line">date</span><br></pre></td></tr></table></figure>
-
-<h2 id="支援的各式"><a href="#支援的各式" class="headerlink" title="支援的各式"></a>支援的各式</h2><p>Hexo 支援任何格式撰寫文章，只要相關的渲染套件有被安裝。</p>
-<p>舉裡來說，Hexo 預設有 <code>hexo-renderer-marked</code> 及 <code>hexo-renderer-ejs</code>。所以你可以透過 <code>markdown</code> 或是 <code>ejs</code> 語法來撰寫你的文章。假如你安裝了 <code>hexo-renderer-pug</code>，你將能夠透過 <code>pug</code> 模板語法來撰寫你的文章。</p>
-<p>你可以重新命名你的文章且轉換檔名至 <code>.ejs</code>，然後 Hexo 會使用 <code>hexo-renderer-ejs</code> 來渲染那個檔案，其他格式同樣也行。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/26/hexo-basic-writing/" data-id="ckj5kcihc000htmum3hlscqkv" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/blog-tools/" rel="tag">blog-tools</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-tools-buildyourownbundler" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2020/12/26/tools-buildyourownbundler/" class="article-date">
-  <time datetime="2020-12-26T10:24:45.000Z" itemprop="datePublished">2020-12-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2020/12/26/tools-buildyourownbundler/">Record of &#34;Build Your Own Bundler&#34;</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>the original <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=Gc9-7PBqOC8&feature=youtu.be">video</a></p>
-<h2 id="Things-you-may-need-to-know-before-to-start"><a href="#Things-you-may-need-to-know-before-to-start" class="headerlink" title="Things you may need to know before to start:"></a>Things you may need to know before to start:</h2><ol>
-<li>What is AST(Abstract Syntax Tree).</li>
-<li>what is Babel and how to use it.</li>
-<li>Have some basic knowledge with JavaScript and Node.js</li>
-</ol>
-<p>Let’s get started</p>
-<p>Including the file system plugins. Make a function call <code>createAsset</code>, which use your entry file as param. Get content by <code>fs.readFIleSync()</code>.</p>
-<figure class="highlight javascript"><figcaption><span>JavaScript</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = requre(<span class="string">&#x27;fs&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createAsset</span>(<span class="params">filename</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> content = fs.readFIleSync(filename,<span class="string">&#x27;utf-8&#x27;</span>,callback)</span><br><span class="line">  <span class="built_in">console</span>.log(content)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">createAsset(<span class="string">&#x27;./exapmle/entry.js&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/26/tools-buildyourownbundler/" data-id="ckj5kcihd000ktmumg3gj85hn" class="article-share-link">Share</a>
-      
-      
     </footer>
   </div>
   
@@ -427,7 +327,120 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/26/hexo-deploy-github/" data-id="ckj5l6lvv0001y3um0tyqevwn" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/12/26/hexo-deploy-github/" data-id="ckj5rkeqg000e0dumgbc12eko" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/blog-tools/" rel="tag">blog-tools</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hexo-basic-datafiles" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/12/26/hexo-basic-datafiles/" class="article-date">
+  <time datetime="2020-12-26T10:24:45.000Z" itemprop="datePublished">2020-12-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/">翻譯</a>►<a class="article-category-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/Hexo/">Hexo</a>►<a class="article-category-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/Hexo/Basic-Usage/">Basic Usage</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020/12/26/hexo-basic-datafiles/">Data Files</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有時你可能需要在模板內使用某些沒有辦法直接在你的發文內取得的資料，或者你想要在其它地方複用。在那樣的情況下，Hexo 3 介紹了一種新的資料資料夾。這個功能在 <code>source/_data</code> 資料夾讀取 YAML 或 JSON 檔案，這樣你可以在你的網站裡使用它們。</p>
+<p>舉裡來說，在 <code>source/_data</code> 下新增一個 <code>menu.yml</code> 檔案。</p>
+<figure class="highlight yml"><figcaption><span>menu.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Home:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">Gallery:</span> <span class="string">/gallery/</span></span><br><span class="line"><span class="attr">Archives:</span> <span class="string">/archives/</span></span><br></pre></td></tr></table></figure>
+
+<p>然後你可以在模板使用它們</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;% for (var link in site.data.menu) &#123; %&gt;</span><br><span class="line">  &lt;a href&#x3D;&quot;&lt;%&#x3D; site.data.menu[link] %&gt;&quot;&gt; &lt;%&#x3D; link %&gt; &lt;&#x2F;a&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>渲然成這樣：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;/&quot;</span>&gt;</span> Home <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;/gallery/&quot;</span>&gt;</span> Gallery <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;/archives/&quot;</span>&gt;</span> Archives <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/12/26/hexo-basic-datafiles/" data-id="ckj5rkeqh000h0dum6i0c5ey3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/blog-tools/" rel="tag">blog-tools</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hexo-basic-writing" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/12/26/hexo-basic-writing/" class="article-date">
+  <time datetime="2020-12-26T10:24:45.000Z" itemprop="datePublished">2020-12-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/">翻譯</a>►<a class="article-category-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/Hexo/">Hexo</a>►<a class="article-category-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/Hexo/Basic-Usage/">Basic Usage</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020/12/26/hexo-basic-writing/">Writing</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>你可以使用以下指令來創建或發佈一個頁面：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+<p><code>post</code> 在是預設的佈局（layout），但是你可以提供自己的。透過編輯檔案 <code>_config.yml</code> 裡的 <code>default_layout</code>，你可以改變預設佈局。</p>
+<h3 id="佈局"><a href="#佈局" class="headerlink" title="佈局"></a>佈局</h3><p>在 Hexo 裡有三種預設佈局：<code>post</code>、<code>page</code>以及<code>draft</code>。透過其中任一種方式創建一個檔案將會儲存在不同路徑。新創建的發佈會被存入 <code>source/_posts</code> 這個資料夾。</p>
+<p>禁用佈局，參考<a target="_blank" rel="noopener" href="https://hexo.io/docs/front-matter#Layout">這篇</a></p>
+<h3 id="檔名"><a href="#檔名" class="headerlink" title="檔名"></a>檔名</h3><p>Hexo 預設會用發佈的標題作為檔名。你可以在 <code>_config.yml</code> 去修改 <code>new_post_name</code> 的設定，去更換預設檔名，例如：<code>:year-:month-:day-:title.md</code> 將會在檔名前加上發佈創建日期作為前綴。你也可以使用以下佔位符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">:title </span><br><span class="line">:year</span><br><span class="line">:month</span><br><span class="line">:i_month 個位數，不會補 0</span><br><span class="line">:day</span><br><span class="line">:i_day 個位數，不會補 0</span><br></pre></td></tr></table></figure>
+
+<h2 id="草稿"><a href="#草稿" class="headerlink" title="草稿"></a>草稿</h2><p>在這之前我們提到過一個在 Hexo 裡一個特別的佈局：草稿。所有在這個佈局裡的發佈都會被存入 <code>source/_drafts</code> 這個資料夾。你可以透過 <code>publish</code> 指令去移動草稿到 <code>source/_posts</code> 這個資料夾。它跟 <code>new</code> 指令有相似的作用。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo publish [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<p>草稿預設不會顯示。你可以在執行 hexo 命令時加上 <code>--draft</code> 的設定，或是啟用在 <code>_config.yml</code> 的 <code>render_drafts</code> 設定去渲染草稿 </p>
+<h2 id="腳手架"><a href="#腳手架" class="headerlink" title="腳手架"></a>腳手架</h2><p>當你要創建發佈時，Hexo 將會基於在 <code>scaffolds</code> 檔案夾裡相關的檔案去建立檔案。舉例來說：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new photo <span class="string">&quot;My Gallery&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>當你下這個指令，Hexo 會試著在 <code>scaffolds</code> 資料夾找出 <code>photo.md</code> 且基於它來建立發佈。以下佔位符是可以使用的腳手架。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">layout </span><br><span class="line">title</span><br><span class="line">date</span><br></pre></td></tr></table></figure>
+
+<h2 id="支援的各式"><a href="#支援的各式" class="headerlink" title="支援的各式"></a>支援的各式</h2><p>Hexo 支援任何格式撰寫文章，只要相關的渲染套件有被安裝。</p>
+<p>舉裡來說，Hexo 預設有 <code>hexo-renderer-marked</code> 及 <code>hexo-renderer-ejs</code>。所以你可以透過 <code>markdown</code> 或是 <code>ejs</code> 語法來撰寫你的文章。假如你安裝了 <code>hexo-renderer-pug</code>，你將能夠透過 <code>pug</code> 模板語法來撰寫你的文章。</p>
+<p>你可以重新命名你的文章且轉換檔名至 <code>.ejs</code>，然後 Hexo 會使用 <code>hexo-renderer-ejs</code> 來渲染那個檔案，其他格式同樣也行。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/12/26/hexo-basic-writing/" data-id="ckj5rkeqi000k0dum90qe6rzs" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/blog-tools/" rel="tag">blog-tools</a></li></ul>
@@ -491,6 +504,10 @@
       <ul>
         
           <li>
+            <a href="/blog/2020/12/26/tree/">tree 命令列 - 印出專案資料夾結構</a>
+          </li>
+        
+          <li>
             <a href="/blog/2020/12/26/source-map-explorer%20/">利用 source-map-explorer 分析打包後各檔案佔比</a>
           </li>
         
@@ -499,15 +516,11 @@
           </li>
         
           <li>
+            <a href="/blog/2020/12/26/hexo-deploy-github/">GitHub Pages</a>
+          </li>
+        
+          <li>
             <a href="/blog/2020/12/26/hexo-basic-datafiles/">Data Files</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2020/12/26/hexo-basic-writing/">Writing</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2020/12/26/tools-buildyourownbundler/">Record of &#34;Build Your Own Bundler&#34;</a>
           </li>
         
       </ul>
