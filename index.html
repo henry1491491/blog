@@ -64,6 +64,357 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-python-django-5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2021/01/17/python-django-5/" class="article-date">
+  <time datetime="2021-01-17T11:18:47.140Z" itemprop="datePublished">2021-01-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/Python/">Python</a>►<a class="article-category-link" href="/blog/categories/Python/Django/">Django</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2021/01/17/python-django-5/">Python Django 資料 CRUD 及篩選</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>CRUD（以下方法有 C, R, U）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Create a new record using the model&#x27;s constructor.</span></span><br><span class="line">record = MyModelName(my_field_name=<span class="string">&quot;Instance #1&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Save the object into the database.</span></span><br><span class="line">record.save()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Access model field values using Python attributes.</span></span><br><span class="line">print(record.<span class="built_in">id</span>) <span class="comment"># should return 1 for the first record.</span></span><br><span class="line">print(record.my_field_name) <span class="comment"># should print &#x27;Instance #1&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Change record by modifying the fields, then calling save().</span></span><br><span class="line">record.my_field_name = <span class="string">&quot;New Instance Name&quot;</span></span><br><span class="line">record.save()</span><br></pre></td></tr></table></figure>
+
+<p>列出該 model 的所有資料</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">all_books = Book.objects.<span class="built_in">all</span>()</span><br></pre></td></tr></table></figure>
+
+<p>篩選符合條件的資料</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wild_books = Book.objects.<span class="built_in">filter</span>(title__contains=<span class="string">&#x27;wild&#x27;</span>)</span><br><span class="line">number_wild_books = wild_books.count()</span><br></pre></td></tr></table></figure>
+
+<p>更多篩選方式：<br><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/en/3.1/ref/models/querysets/#field-lookups">QuerySet API reference | Django documentation | Django</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/01/17/python-django-5/" data-id="ckk11ttu30005o6umcvvkc7r6" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Python/" rel="tag">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-python-django-4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2021/01/17/python-django-4/" class="article-date">
+  <time datetime="2021-01-17T10:50:36.699Z" itemprop="datePublished">2021-01-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/Python/">Python</a>►<a class="article-category-link" href="/blog/categories/Python/Django/">Django</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2021/01/17/python-django-4/">Python Django 資料庫（Schema）設定</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>model 的欄位</li>
+<li>欄位裡面的設定</li>
+</ul>
+<hr>
+<h2 id="model-的欄位"><a href="#model-的欄位" class="headerlink" title="model 的欄位"></a>model 的欄位</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/en/3.1/ref/models/fields/#django.db.models.CharField">CharField</a>  短中長度、長度固定的字串，必須設定最大長度</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/en/3.1/ref/models/fields/#django.db.models.TextField">TextField</a>  任意長度字串，最好設定最大長度限制（但只會作用在表單，資料庫不會去做限制）</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/en/3.1/ref/models/fields/#django.db.models.IntegerField">IntegerField</a>  儲存整數的欄位，在表格階段被驗證</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/en/3.1/ref/models/fields/#datefield">DateField</a>  and  <a target="_blank" rel="noopener" href="https://docs.djangoproject.com/en/3.1/ref/models/fields/#datetimefield">DateTimeField</a>  時間設定</p>
+</li>
+</ul>
+<blockquote>
+<p>目前還沒使用過</p>
+</blockquote>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/en/3.1/ref/models/fields/#emailfield">EmailField</a>  儲存及驗證 E-mail 地址</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/en/3.1/ref/models/fields/#filefield">FileField</a>  and  <a target="_blank" rel="noopener" href="https://docs.djangoproject.com/en/3.1/ref/models/fields/#imagefield">ImageField</a>  儲存上傳檔案跟圖檔（可以設定檔案或是照片的位置）</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/en/3.1/ref/models/fields/#autofield">AutoField</a>  一個自動增加的整數欄位。若無指定，會自動為你增加主鍵（Primary Key）</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/en/3.1/ref/models/fields/#foreignkey">ForeignKey</a>  外鍵，可對應到其它 models </p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/en/3.1/ref/models/fields/#manytomanyfield">ManyToManyField</a>  </p>
+</li>
+</ul>
+<blockquote>
+<p>還沒用過，等用過再來紀錄</p>
+</blockquote>
+<p>更多類型參考：<a target="_blank" rel="noopener" href="https://docs.djangoproject.com/en/3.1/ref/models/fields/#field-types">Model field reference | Django documentation | Django</a></p>
+<p>欄位裡面的設定</p>
+<p>可以設定在 <code>models.CharField()</code> 方法裡的參數：</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/en/3.1/ref/models/fields/#help-text">help_text</a> 創建一個 html 表單的 Label</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/en/3.1/ref/models/fields/#verbose-name">verbose_name</a> 用來給人閱讀的表單標籤名稱。如果沒設定會用 help_text 作為預設</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/en/3.1/ref/models/fields/#default">default</a> 每新增一筆紀錄，會自動創建的 field 的預設值</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/en/3.1/ref/models/fields/#null">null</a> </p>
+</li>
+</ul>
+<blockquote>
+<p>還沒使用，未來補充</p>
+</blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/en/3.1/ref/models/fields/#blank">blank</a> 允許空格，與上方 null 設定有關</li>
+</ul>
+<blockquote>
+<p>還沒使用，未來補充</p>
+</blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/en/3.1/ref/models/fields/#choices">choices</a> </li>
+</ul>
+<blockquote>
+<p>還沒使用，未來補充</p>
+</blockquote>
+<ul>
+<li> <a target="_blank" rel="noopener" href="https://docs.djangoproject.com/en/3.1/ref/models/fields/#primary-key">primary_key</a> 將這個欄位設為主鍵，如果沒有，Django 會自動幫你增加一個欄位為主鍵</li>
+</ul>
+<p>更多設定參考：<a target="_blank" rel="noopener" href="https://docs.djangoproject.com/en/3.1/ref/models/fields/#field-options">Model field reference | Django documentation | Django</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/01/17/python-django-4/" data-id="ckk11ttu10003o6um4alx4a4z" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Python/" rel="tag">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-python-django-3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2021/01/17/python-django-3/" class="article-date">
+  <time datetime="2021-01-17T10:47:09.162Z" itemprop="datePublished">2021-01-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/Python/">Python</a>►<a class="article-category-link" href="/blog/categories/Python/Django/">Django</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2021/01/17/python-django-3/">Python Django 路由設定</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在 <code>projectname/projectname/urls.py</code> 檔案，新增一個 urlpatterns 陣列，用來設定多個路由的地方</p>
+<p>三種設定方式：</p>
+<ul>
+<li><input disabled="" type="checkbox"> 還沒仔細去區分</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path</span><br><span class="line"></span><br><span class="line"><span class="comment"># Use include() to add paths from the catalog application</span></span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> include</span><br><span class="line"><span class="comment">#Add URL maps to redirect the base URL to our application</span></span><br><span class="line"><span class="keyword">from</span> django.views.generic <span class="keyword">import</span> RedirectView</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Use static() to add url mapping to serve static files during development (only)</span></span><br><span class="line"><span class="keyword">from</span> django.conf <span class="keyword">import</span> settings</span><br><span class="line"><span class="keyword">from</span> django.conf.urls.static <span class="keyword">import</span> static</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">&#x27;admin/&#x27;</span>, admin.site.urls),</span><br><span class="line">    path(<span class="string">&#x27;catalog/&#x27;</span>, include(<span class="string">&#x27;catalog.urls&#x27;</span>)),</span><br><span class="line">    path(<span class="string">&#x27;&#x27;</span>, RedirectView.as_view(url=<span class="string">&#x27;catalog/&#x27;</span>)),</span><br><span class="line">] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/01/17/python-django-3/" data-id="ckk11ttu40006o6umhrjt59kq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Python/" rel="tag">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-python-django-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2021/01/17/python-django-2/" class="article-date">
+  <time datetime="2021-01-17T10:34:25.170Z" itemprop="datePublished">2021-01-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/Python/">Python</a>►<a class="article-category-link" href="/blog/categories/Python/Django/">Django</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2021/01/17/python-django-2/">Python Django 專案資料夾結構</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><strong>init</strong>.py：當 Python 讀到這個檔案，便會將該層資料夾視為一個 Python Package</li>
+<li>settings.py：設定專案的地方。註冊 applicatios、存放靜態檔案的位置、資料庫細部的設定等等 </li>
+<li>urls.py：設定 URL 對應 View 的地方（路由對應頁面，或對應到特定 application）</li>
+<li>wsgi.py：與 webserver 溝通的設定</li>
+<li>asgi.py：Python 網站與 server 進行異步溝通的標準，與 wsgi 差別在於它同時提供同步與非同步與 Python 網站的溝通，是 wsgi 的向下相容，支援多個 server 跟 appications 框架</li>
+</ul>
+<blockquote>
+<p>上述部分設定還沒有細究，僅僅先有個概念</p>
+</blockquote>
+<p>照著 MDN 教學下指令，然後會自動創建一個 catalog 的資料夾</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 manage.py startapp catalog</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Migrations：當我們更改 Models（資料庫 schema）後，會自動幫我們更新資料庫</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/01/17/python-django-2/" data-id="ckk11tttx0001o6umgj8f1c82" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Python/" rel="tag">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-python-django-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2021/01/17/python-django-1/" class="article-date">
+  <time datetime="2021-01-17T10:24:41.938Z" itemprop="datePublished">2021-01-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/Python/">Python</a>►<a class="article-category-link" href="/blog/categories/Python/Django/">Django</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2021/01/17/python-django-1/">Python Django 環境設定</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>此筆記僅為了紀錄架設 Python 網站過程</p>
+</blockquote>
+<h2 id="建立虛擬環境（virtualenv）"><a href="#建立虛擬環境（virtualenv）" class="headerlink" title="建立虛擬環境（virtualenv）"></a>建立虛擬環境（virtualenv）</h2><blockquote>
+<p>為了讓不同 Python 專案之間環境乾淨，或是避免影響到全域環境，通常很多人會建立虛擬環境來進行開發</p>
+</blockquote>
+<p>pip3 安裝虛擬環境（因為使用 Python3, macOS）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip3 install virtualenvwrapper</span><br></pre></td></tr></table></figure>
+
+<p>打開 zsh 配置檔（因為我的 shell 使用的是 zsh）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+<p>加上以下幾行在結尾</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export WORKON_HOME=$HOME/.virtualenvs</span><br><span class="line">export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3</span><br><span class="line">export PROJECT_HOME=$HOME/Devel</span><br><span class="line">source /usr/local/bin/virtualenvwrapper.sh</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>VIRTUALENVWRAPPER_PYTHON 對應到 python3 的位置</li>
+<li>/usr/local/bin/virtualenvwrapper.sh 這行也要確定是否該路徑下存放 virtualenvwrapper.sh 是對的</li>
+<li>以上兩者確認路徑方式可透過 </li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">which python3</span><br><span class="line">which virtualenvwrapper.sh</span><br></pre></td></tr></table></figure>
+
+<p>設定完成後，重置設定</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+<p>現在只要下指令，便能創建一個虛擬環境</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkvirtualenv</span><br></pre></td></tr></table></figure>
+
+<p>然後我們可以在終端機看到提示開頭的 <code>()</code> 裡面就是剛剛創建的虛擬環境</p>
+<h2 id="常用的命令："><a href="#常用的命令：" class="headerlink" title="常用的命令："></a>常用的命令：</h2><ul>
+<li>deactivate — 退出當前的 Python 虛擬環境</li>
+<li>workon — 列出可用的虛擬環境</li>
+<li>workon name_of_environment — 啟動指定的Python 虛擬環境</li>
+<li>rmvirtualenv name_of_environment — 刪除指定的環境</li>
+</ul>
+<p>然後我們使用 Django 提供的命令創建專案</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">django-admin startproject myfirstdjangosite</span><br></pre></td></tr></table></figure>
+<p>開啟一個本地 Server</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 manage.py runserver</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="如何把檔案上傳到伺服器"><a href="#如何把檔案上傳到伺服器" class="headerlink" title="如何把檔案上傳到伺服器"></a>如何把檔案上傳到伺服器</h2><ul>
+<li>SFTP</li>
+<li>FTP 也是一種發布網站的方式</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/01/17/python-django-1/" data-id="ckk11tttt0000o6um7zumaach" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Python/" rel="tag">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-year-in-review2020" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/2021/01/14/year-in-review2020/" class="article-date">
@@ -402,177 +753,12 @@
 
 
   
-    <article id="post-hexo-basic-writing" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2020/12/26/hexo-basic-writing/" class="article-date">
-  <time datetime="2020-12-26T10:24:45.000Z" itemprop="datePublished">2020-12-26</time>
-</a>
+
+
+  <nav id="page-nav">
     
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/">翻譯</a>►<a class="article-category-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/Hexo/">Hexo</a>►<a class="article-category-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/Hexo/Basic-Usage/">Basic Usage</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2020/12/26/hexo-basic-writing/">Writing</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>你可以使用以下指令來創建或發佈一個頁面：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
-<p><code>post</code> 在是預設的佈局（layout），但是你可以提供自己的。透過編輯檔案 <code>_config.yml</code> 裡的 <code>default_layout</code>，你可以改變預設佈局。</p>
-<h3 id="佈局"><a href="#佈局" class="headerlink" title="佈局"></a>佈局</h3><p>在 Hexo 裡有三種預設佈局：<code>post</code>、<code>page</code>以及<code>draft</code>。透過其中任一種方式創建一個檔案將會儲存在不同路徑。新創建的發佈會被存入 <code>source/_posts</code> 這個資料夾。</p>
-<p>禁用佈局，參考<a target="_blank" rel="noopener" href="https://hexo.io/docs/front-matter#Layout">這篇</a></p>
-<h3 id="檔名"><a href="#檔名" class="headerlink" title="檔名"></a>檔名</h3><p>Hexo 預設會用發佈的標題作為檔名。你可以在 <code>_config.yml</code> 去修改 <code>new_post_name</code> 的設定，去更換預設檔名，例如：<code>:year-:month-:day-:title.md</code> 將會在檔名前加上發佈創建日期作為前綴。你也可以使用以下佔位符</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">:title </span><br><span class="line">:year</span><br><span class="line">:month</span><br><span class="line">:i_month 個位數，不會補 0</span><br><span class="line">:day</span><br><span class="line">:i_day 個位數，不會補 0</span><br></pre></td></tr></table></figure>
-
-<h2 id="草稿"><a href="#草稿" class="headerlink" title="草稿"></a>草稿</h2><p>在這之前我們提到過一個在 Hexo 裡一個特別的佈局：草稿。所有在這個佈局裡的發佈都會被存入 <code>source/_drafts</code> 這個資料夾。你可以透過 <code>publish</code> 指令去移動草稿到 <code>source/_posts</code> 這個資料夾。它跟 <code>new</code> 指令有相似的作用。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo publish [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
-
-<p>草稿預設不會顯示。你可以在執行 hexo 命令時加上 <code>--draft</code> 的設定，或是啟用在 <code>_config.yml</code> 的 <code>render_drafts</code> 設定去渲染草稿 </p>
-<h2 id="腳手架"><a href="#腳手架" class="headerlink" title="腳手架"></a>腳手架</h2><p>當你要創建發佈時，Hexo 將會基於在 <code>scaffolds</code> 檔案夾裡相關的檔案去建立檔案。舉例來說：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new photo <span class="string">&quot;My Gallery&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>當你下這個指令，Hexo 會試著在 <code>scaffolds</code> 資料夾找出 <code>photo.md</code> 且基於它來建立發佈。以下佔位符是可以使用的腳手架。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">layout </span><br><span class="line">title</span><br><span class="line">date</span><br></pre></td></tr></table></figure>
-
-<h2 id="支援的各式"><a href="#支援的各式" class="headerlink" title="支援的各式"></a>支援的各式</h2><p>Hexo 支援任何格式撰寫文章，只要相關的渲染套件有被安裝。</p>
-<p>舉裡來說，Hexo 預設有 <code>hexo-renderer-marked</code> 及 <code>hexo-renderer-ejs</code>。所以你可以透過 <code>markdown</code> 或是 <code>ejs</code> 語法來撰寫你的文章。假如你安裝了 <code>hexo-renderer-pug</code>，你將能夠透過 <code>pug</code> 模板語法來撰寫你的文章。</p>
-<p>你可以重新命名你的文章且轉換檔名至 <code>.ejs</code>，然後 Hexo 會使用 <code>hexo-renderer-ejs</code> 來渲染那個檔案，其他格式同樣也行。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/26/hexo-basic-writing/" data-id="ckj5rmufx000h3gum4f6p6h7n" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/blog-tools/" rel="tag">blog-tools</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hexo-deploy-github" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2020/12/26/hexo-deploy-github/" class="article-date">
-  <time datetime="2020-12-26T10:24:45.000Z" itemprop="datePublished">2020-12-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/">翻譯</a>►<a class="article-category-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/Hexo/">Hexo</a>►<a class="article-category-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/Hexo/Deployment/">Deployment</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2020/12/26/hexo-deploy-github/">GitHub Pages</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在這個教學，我們使用 <a target="_blank" rel="noopener" href="https://docs.github.com/en/actions">GitHub Actions</a> 來部署 Github Pages。這皆適用於公開及私人的程式碼倉庫。假如你偏好不要上傳 source 資料夾到 GitHub，則你可以跳到 <a target="_blank" rel="noopener" href="https://hexo.io/docs/github-pages#One-command-deployment">One-command deployment</a> 的章節。</p>
-<ol>
-<li>創建一個項目名為 <strong>username.github.io</strong>，username 就是你的 GitHub 使用者帳號。假如你已經上傳其他項目到這個倉庫，你可以重新命名它。</li>
-</ol>
-<p>2.加入以下幾行到 <code>package.json</code>（假如你的檔案已經有了，可以跳過）</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;build&quot;</span>: <span class="string">&quot;hexo generate&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;hexo&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;version&quot;</span>: <span class="string">&quot;5.0.0&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">&quot;dependencies&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;hexo&quot;</span>: <span class="string">&quot;^5.0.0&quot;</span>,</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>將你的 Hexo 資料夾以 source 分支推至你的遠端倉庫， <code>public/</code> 資料夾預設不會（且不應該）被上傳，確定 <code>.gitignore</code> 檔案內有包含 <code>public/</code> 這行。該資料夾結構應該約略相似於<a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-starter">這個</a>專案，不包含 <code>.gitmodules</code> 這個檔案。</li>
-</ol>
-<ul>
-<li>將你的 source 推到 GitHub 上：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin <span class="built_in">source</span></span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>加上 <code>.github/workflows/pages.yml</code> 這個檔案包含以下內容到你的專案</li>
-</ol>
-<figure class="highlight yml"><figcaption><span>.github/workflows/pages.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Pages</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">source</span>  <span class="comment"># default branch</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">pages:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/checkout@v2</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Use</span> <span class="string">Node.js</span> <span class="number">12.</span><span class="string">x</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/setup-node@v1</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">node-version:</span> <span class="string">&#x27;12.x&#x27;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Cache</span> <span class="string">NPM</span> <span class="string">dependencies</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/cache@v2</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">path:</span> <span class="string">node_modules</span></span><br><span class="line">          <span class="attr">key:</span> <span class="string">$&#123;&#123;</span> <span class="string">runner.OS</span> <span class="string">&#125;&#125;-npm-cache</span></span><br><span class="line">          <span class="attr">restore-keys:</span> <span class="string">|</span></span><br><span class="line">            <span class="string">$&#123;&#123;</span> <span class="string">runner.OS</span> <span class="string">&#125;&#125;-npm-cache</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">Dependencies</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">npm</span> <span class="string">install</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Build</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">npm</span> <span class="string">run</span> <span class="string">build</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Deploy</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">peaceiris/actions-gh-pages@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">github_token:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.GITHUB_TOKEN</span> <span class="string">&#125;&#125;</span></span><br><span class="line">          <span class="attr">publish_dir:</span> <span class="string">./public</span></span><br><span class="line">          <span class="attr">publish_branch:</span> <span class="string">master</span>  <span class="comment"># deploying branch</span></span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li><p>一旦部署完成，產生出的頁面可以在你的倉庫的 master 分支中被找到</p>
-</li>
-<li><p>在你的 GitHub 倉庫的設置，到 “GitHub Pages” 的區塊，將來源改為 master 分支。</p>
-</li>
-<li><p>檢查 username.github.io 這個頁面</p>
-</li>
-</ol>
-<ul>
-<li>注意：假如你透過 CNAME 指定一個客製化的網域名，你必須將 CNAME 檔案添加到 <code>source/</code> 資料夾。</li>
-</ul>
-<h2 id="Project-page"><a href="#Project-page" class="headerlink" title="Project page"></a>Project page</h2><p>假如你偏好在 GitHub 上有一個專案頁面：</p>
-<ol>
-<li><p>在 GitHub上，找到你的倉庫。到設定頁籤。改變倉庫名稱，因此你的部落格現在可以是 <code>username.github.io/repository</code> 這樣的名稱。repository 可以是任何名稱，像是 blog 或是 hexo。</p>
-</li>
-<li><p>編輯你的 <code>_config.yml</code> 檔案，改變一下 root:value 為 <code>/&lt;repository&gt;/</code>（必須開始與結束都是 <code>/</code> 符號，不需要括號）。</p>
-</li>
-<li><p>在 <code>.github/workflows/pages.yml</code> 改變以下幾行：</p>
-</li>
-</ol>
-<figure class="highlight yml"><figcaption><span>.github/workflows/pages.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Pages</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span></span><br><span class="line"><span class="bullet">-</span>      <span class="bullet">-</span> <span class="string">source</span>  <span class="comment"># default branch</span></span><br><span class="line"><span class="string">+</span>      <span class="bullet">-</span> <span class="string">master</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">pages:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Deploy</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">peaceiris/actions-gh-pages@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">github_token:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.GITHUB_TOKEN</span> <span class="string">&#125;&#125;</span></span><br><span class="line">          <span class="attr">publish_dir:</span> <span class="string">./public</span></span><br><span class="line"><span class="bullet">-</span>          <span class="attr">publish_branch:</span> <span class="string">master</span>  <span class="comment"># deploying branch</span></span><br><span class="line"><span class="string">+</span>          <span class="attr">publish_branch:</span> <span class="string">gh-pages</span></span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>提交且推送到 master 分支。</li>
-</ol>
-<ul>
-<li>將 master 分支推送到遠端：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure>
-
-<ol start="5">
-<li><p>一旦完成提交，產生的頁面可以在你的倉庫的 <code>gh-pages</code> 分支被找到</p>
-</li>
-<li><p>在你的倉庫的設定，到 GitHub Pages 區塊，改變來源為 <code>gh-pages</code> 分支。</p>
-</li>
-</ol>
-<h2 id="一條指令部署"><a href="#一條指令部署" class="headerlink" title="一條指令部署"></a>一條指令部署</h2><p>以下指示適用於<a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment">one-command deployment</a>頁面</p>
-<ol>
-<li>下載 <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a></li>
-<li>在 <code>_config.yml</code> 加上以下設定（去除已經有的幾行）</li>
-</ol>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/&lt;username&gt;/&lt;project&gt;</span></span><br><span class="line">  <span class="comment"># example, https://github.com/hexojs/hexojs.github.io</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">gh-pages</span></span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>執行 <code>hexo clean</code> 與 <code>hexo deploy</code></li>
-<li>檢查 username.github.io 頁面</li>
-</ol>
-<h2 id="幾個有用的連結"><a href="#幾個有用的連結" class="headerlink" title="幾個有用的連結"></a>幾個有用的連結</h2><p><a target="_blank" rel="noopener" href="https://help.github.com/categories/github-pages-basics/">GitHub Pages</a><br><a target="_blank" rel="noopener" href="https://docs.travis-ci.com/user/tutorial/">Travis CI Docs</a><br><a target="_blank" rel="noopener" href="https://github.com/marketplace/actions/github-pages-action">peaceiris/actions-gh-pages</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/26/hexo-deploy-github/" data-id="ckj5rmufz000k3gum65kga4bl" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/blog-tools/" rel="tag">blog-tools</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
+    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="extend next" rel="next" href="/blog/page/2/">下一頁 &amp;raquo;</a>
+  </nav>
 
 </section>
         
@@ -582,7 +768,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分類</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/tools/">tools</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E5%B9%B4%E5%BA%A6%E5%9B%9E%E9%A1%A7/">年度回顧</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/">翻譯</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/Hexo/">Hexo</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/Hexo/Basic-Usage/">Basic Usage</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/Hexo/Deployment/">Deployment</a></li></ul></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Python/">Python</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Python/Django/">Django</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/tools/">tools</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E5%B9%B4%E5%BA%A6%E5%9B%9E%E9%A1%A7/">年度回顧</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/">翻譯</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/Hexo/">Hexo</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/Hexo/Basic-Usage/">Basic Usage</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/%E7%BF%BB%E8%AD%AF/Hexo/Deployment/">Deployment</a></li></ul></li></ul></li></ul>
     </div>
   </div>
 
@@ -592,7 +778,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">標籤</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/blog-tools/" rel="tag">blog-tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/tools/" rel="tag">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%B9%B4%E5%BA%A6%E5%9B%9E%E9%A1%A7/" rel="tag">年度回顧</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/blog-tools/" rel="tag">blog-tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/tools/" rel="tag">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%B9%B4%E5%BA%A6%E5%9B%9E%E9%A1%A7/" rel="tag">年度回顧</a></li></ul>
     </div>
   </div>
 
@@ -602,7 +788,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">標籤雲</h3>
     <div class="widget tagcloud">
-      <a href="/blog/tags/blog-tools/" style="font-size: 20px;">blog-tools</a> <a href="/blog/tags/tools/" style="font-size: 15px;">tools</a> <a href="/blog/tags/%E5%B9%B4%E5%BA%A6%E5%9B%9E%E9%A1%A7/" style="font-size: 10px;">年度回顧</a>
+      <a href="/blog/tags/Python/" style="font-size: 20px;">Python</a> <a href="/blog/tags/blog-tools/" style="font-size: 16.67px;">blog-tools</a> <a href="/blog/tags/tools/" style="font-size: 13.33px;">tools</a> <a href="/blog/tags/%E5%B9%B4%E5%BA%A6%E5%9B%9E%E9%A1%A7/" style="font-size: 10px;">年度回顧</a>
     </div>
   </div>
 
@@ -624,23 +810,23 @@
       <ul>
         
           <li>
-            <a href="/blog/2021/01/14/year-in-review2020/">2020 年度回顧</a>
+            <a href="/blog/2021/01/17/python-django-5/">Python Django 資料 CRUD 及篩選</a>
           </li>
         
           <li>
-            <a href="/blog/2020/12/26/tree/">tree 命令列 - 印出專案資料夾結構</a>
+            <a href="/blog/2021/01/17/python-django-4/">Python Django 資料庫（Schema）設定</a>
           </li>
         
           <li>
-            <a href="/blog/2020/12/26/source-map-explorer%20/">利用 source-map-explorer 分析打包後各檔案佔比</a>
+            <a href="/blog/2021/01/17/python-django-3/">Python Django 路由設定</a>
           </li>
         
           <li>
-            <a href="/blog/2020/12/26/hexo-basic-assetfolders/">Asset Folders</a>
+            <a href="/blog/2021/01/17/python-django-2/">Python Django 專案資料夾結構</a>
           </li>
         
           <li>
-            <a href="/blog/2020/12/26/hexo-basic-datafiles/">Data Files</a>
+            <a href="/blog/2021/01/17/python-django-1/">Python Django 環境設定</a>
           </li>
         
       </ul>

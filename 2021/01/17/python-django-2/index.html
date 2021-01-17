@@ -5,14 +5,19 @@
   
 
   
-  <title>Category: Hexo | Henry&#39;s Blogger</title>
+  <title>Python Django 專案資料夾結構 | Henry&#39;s Blogger</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Henry&#39;s Blogger">
-<meta property="og:url" content="http://example.com/categories/%E7%BF%BB%E8%AD%AF/Hexo/index.html">
+  <meta name="description" content="init.py：當 Python 讀到這個檔案，便會將該層資料夾視為一個 Python Package settings.py：設定專案的地方。註冊 applicatios、存放靜態檔案的位置、資料庫細部的設定等等  urls.py：設定 URL 對應 View 的地方（路由對應頁面，或對應到特定 application） wsgi.py：與 webserver 溝通的設定 asgi.py：Py">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Django 專案資料夾結構">
+<meta property="og:url" content="http://example.com/2021/01/17/python-django-2/index.html">
 <meta property="og:site_name" content="Henry&#39;s Blogger">
+<meta property="og:description" content="init.py：當 Python 讀到這個檔案，便會將該層資料夾視為一個 Python Package settings.py：設定專案的地方。註冊 applicatios、存放靜態檔案的位置、資料庫細部的設定等等  urls.py：設定 URL 對應 View 的地方（路由對應頁面，或對應到特定 application） wsgi.py：與 webserver 溝通的設定 asgi.py：Py">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2021-01-17T10:34:25.170Z">
+<meta property="article:modified_time" content="2021-01-17T10:46:50.806Z">
 <meta property="article:author" content="Henry Wu">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/blog/atom.xml" title="Henry&#39;s Blogger" type="application/atom+xml">
@@ -62,97 +67,82 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/2020/12/26/hexo-basic-assetfolders/" class="archive-article-date">
-  <time datetime="2020-12-26T10:24:45.000Z" itemprop="datePublished">12月 26</time>
+        <section id="main"><article id="post-python-django-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2021/01/17/python-django-2/" class="article-date">
+  <time datetime="2021-01-17T10:34:25.170Z" itemprop="datePublished">2021-01-17</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/Python/">Python</a>►<a class="article-category-link" href="/blog/categories/Python/Django/">Django</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2020/12/26/hexo-basic-assetfolders/">Asset Folders</a>
+    <h1 class="article-title" itemprop="name">
+      Python Django 專案資料夾結構
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/2020/12/26/hexo-basic-datafiles/" class="archive-article-date">
-  <time datetime="2020-12-26T10:24:45.000Z" itemprop="datePublished">12月 26</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2020/12/26/hexo-basic-datafiles/">Data Files</a>
-    </h1>
-  
+        <ul>
+<li><strong>init</strong>.py：當 Python 讀到這個檔案，便會將該層資料夾視為一個 Python Package</li>
+<li>settings.py：設定專案的地方。註冊 applicatios、存放靜態檔案的位置、資料庫細部的設定等等 </li>
+<li>urls.py：設定 URL 對應 View 的地方（路由對應頁面，或對應到特定 application）</li>
+<li>wsgi.py：與 webserver 溝通的設定</li>
+<li>asgi.py：Python 網站與 server 進行異步溝通的標準，與 wsgi 差別在於它同時提供同步與非同步與 Python 網站的溝通，是 wsgi 的向下相容，支援多個 server 跟 appications 框架</li>
+</ul>
+<blockquote>
+<p>上述部分設定還沒有細究，僅僅先有個概念</p>
+</blockquote>
+<p>照著 MDN 教學下指令，然後會自動創建一個 catalog 的資料夾</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 manage.py startapp catalog</span><br></pre></td></tr></table></figure>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/2020/12/26/hexo-basic-writing/" class="archive-article-date">
-  <time datetime="2020-12-26T10:24:45.000Z" itemprop="datePublished">12月 26</time>
-</a>
+<ul>
+<li>Migrations：當我們更改 Models（資料庫 schema）後，會自動幫我們更新資料庫</li>
+</ul>
+
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2020/12/26/hexo-basic-writing/">Writing</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/2020/12/26/hexo-deploy-github/" class="archive-article-date">
-  <time datetime="2020-12-26T10:24:45.000Z" itemprop="datePublished">12月 26</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/01/17/python-django-2/" data-id="ckk11tttx0001o6umgj8f1c82" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2020/12/26/hexo-deploy-github/">GitHub Pages</a>
-    </h1>
-  
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Python/" rel="tag">Python</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2021/01/17/python-django-3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Python Django 路由設定
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/blog/2021/01/17/python-django-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python Django 環境設定</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
         

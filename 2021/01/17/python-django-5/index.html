@@ -5,14 +5,19 @@
   
 
   
-  <title>Category: Hexo | Henry&#39;s Blogger</title>
+  <title>Python Django 資料 CRUD 及篩選 | Henry&#39;s Blogger</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Henry&#39;s Blogger">
-<meta property="og:url" content="http://example.com/categories/%E7%BF%BB%E8%AD%AF/Hexo/index.html">
+  <meta name="description" content="CRUD（以下方法有 C, R, U） 12345678910111213# Create a new record using the model&amp;#x27;s constructor.record &#x3D; MyModelName(my_field_name&#x3D;&quot;Instance #1&quot;)# Save the object into the database.record.save">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Django 資料 CRUD 及篩選">
+<meta property="og:url" content="http://example.com/2021/01/17/python-django-5/index.html">
 <meta property="og:site_name" content="Henry&#39;s Blogger">
+<meta property="og:description" content="CRUD（以下方法有 C, R, U） 12345678910111213# Create a new record using the model&amp;#x27;s constructor.record &#x3D; MyModelName(my_field_name&#x3D;&quot;Instance #1&quot;)# Save the object into the database.record.save">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2021-01-17T11:18:47.140Z">
+<meta property="article:modified_time" content="2021-01-17T11:20:58.702Z">
 <meta property="article:author" content="Henry Wu">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/blog/atom.xml" title="Henry&#39;s Blogger" type="application/atom+xml">
@@ -62,97 +67,67 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/2020/12/26/hexo-basic-assetfolders/" class="archive-article-date">
-  <time datetime="2020-12-26T10:24:45.000Z" itemprop="datePublished">12月 26</time>
+        <section id="main"><article id="post-python-django-5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2021/01/17/python-django-5/" class="article-date">
+  <time datetime="2021-01-17T11:18:47.140Z" itemprop="datePublished">2021-01-17</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/Python/">Python</a>►<a class="article-category-link" href="/blog/categories/Python/Django/">Django</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2020/12/26/hexo-basic-assetfolders/">Asset Folders</a>
+    <h1 class="article-title" itemprop="name">
+      Python Django 資料 CRUD 及篩選
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/2020/12/26/hexo-basic-datafiles/" class="archive-article-date">
-  <time datetime="2020-12-26T10:24:45.000Z" itemprop="datePublished">12月 26</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2020/12/26/hexo-basic-datafiles/">Data Files</a>
-    </h1>
-  
+        <p>CRUD（以下方法有 C, R, U）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Create a new record using the model&#x27;s constructor.</span></span><br><span class="line">record = MyModelName(my_field_name=<span class="string">&quot;Instance #1&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Save the object into the database.</span></span><br><span class="line">record.save()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Access model field values using Python attributes.</span></span><br><span class="line">print(record.<span class="built_in">id</span>) <span class="comment"># should return 1 for the first record.</span></span><br><span class="line">print(record.my_field_name) <span class="comment"># should print &#x27;Instance #1&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Change record by modifying the fields, then calling save().</span></span><br><span class="line">record.my_field_name = <span class="string">&quot;New Instance Name&quot;</span></span><br><span class="line">record.save()</span><br></pre></td></tr></table></figure>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/2020/12/26/hexo-basic-writing/" class="archive-article-date">
-  <time datetime="2020-12-26T10:24:45.000Z" itemprop="datePublished">12月 26</time>
-</a>
+<p>列出該 model 的所有資料</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">all_books = Book.objects.<span class="built_in">all</span>()</span><br></pre></td></tr></table></figure>
+
+<p>篩選符合條件的資料</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wild_books = Book.objects.<span class="built_in">filter</span>(title__contains=<span class="string">&#x27;wild&#x27;</span>)</span><br><span class="line">number_wild_books = wild_books.count()</span><br></pre></td></tr></table></figure>
+
+<p>更多篩選方式：<br><a target="_blank" rel="noopener" href="https://docs.djangoproject.com/en/3.1/ref/models/querysets/#field-lookups">QuerySet API reference | Django documentation | Django</a></p>
+
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2020/12/26/hexo-basic-writing/">Writing</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/2020/12/26/hexo-deploy-github/" class="archive-article-date">
-  <time datetime="2020-12-26T10:24:45.000Z" itemprop="datePublished">12月 26</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/01/17/python-django-5/" data-id="ckk11ttu30005o6umcvvkc7r6" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2020/12/26/hexo-deploy-github/">GitHub Pages</a>
-    </h1>
-  
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Python/" rel="tag">Python</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/blog/2021/01/17/python-django-4/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python Django 資料庫（Schema）設定</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
         
